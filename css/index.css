@@ -1,0 +1,62 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-top: 10%;
+    margin-left: 10%;
+    width: 45%;
+}
+
+.row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: nowrap;
+    margin-right: -15px;
+    margin-left: -15px;
+    justify-content: flex-end;
+}
+
+label {
+    background: linear-gradient(45deg, #fdcf00, #e52e3d);
+    -webkit-background-clip: text;
+    color: transparent;
+    font-size: 20px;
+    max-width: 100%;
+}
+
+.form h2{
+    display: flex;
+    align-content: center;
+    margin: 2%;
+
+    background: linear-gradient(45deg, #fdcf00, #e52e3d);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+.form-droup {
+    justify-content: center;
+}
+
+.form button {
+    background: linear-gradient(45deg, #fdcf00, #e52e3d);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+#botao {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+#botao1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn:hover {
+    background: linear-gradient(45deg, #fdcf00, #e52e3d);
+    -webkit-background-clip: text;
+    color: white;
+}

@@ -1,0 +1,14 @@
+
+body{
+    background-image: url('/img/galaxia-do-planeta-espacial-na-nebulosa-noturna-gerada-por-ia.jpg');
+    background-size: cover;
+    color: white;
+}
+
+h2 {
+    display: flex;
+    justify-content: center;
+    color: #3192fa;
+    margin-right: 3%;
+    margin: 2%;
+}

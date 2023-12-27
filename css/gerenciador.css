@@ -1,0 +1,147 @@
+/* Adicione o estilo para a imagem de fundo ocupar toda a tela */
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url('/img/galaxia-do-planeta-espacial-na-nebulosa-noturna-gerada-por-ia.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: white;
+}
+
+
+
+.nav-tabs {
+    display: flex;
+    justify-content: space-between;
+    background: none; /* Remova a propriedade background-image do .nav-tabs */
+    border-bottom: 0;
+}
+
+.nav-link {
+    background: linear-gradient(45deg, #fdcf00, #e52e3d);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; /* Ajuste para centralizar os itens no eixo X */
+    margin-top: 0px;
+    margin-left: 10%;
+    width: 45%;
+
+}
+
+.row {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+    align-items: flex-end;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+form .btn {
+    background: linear-gradient(45deg, #fdcf00, #e52e3d);
+    -webkit-background-clip: text;
+    color: transparent;
+    border-color: #ff7b00;
+}
+
+.form h2 {
+    background: linear-gradient(45deg, #fdcf00, #e52e3d);
+    -webkit-background-clip: text;
+    color: transparent;
+    
+}
+
+label {
+    background: linear-gradient(45deg, #fdcf00, #e52e3d);
+    -webkit-background-clip: text;
+    color: transparent;
+    
+    text-align: center;
+}
+
+
+.btn-group{
+    margin-left: 30%;
+}
+
+.status-tarefa {
+    display: flex;
+    justify-content: space-around;
+    margin-left: 25%; /* Ajuste para centralizar melhor */
+    margin-top: 10px;
+    width: 50%; /* Ajuste para ocupar 80% da largura */
+}
+
+.status-tarefa h5 {
+    align-items: end; /* Ajuste para centralizar verticalmente */
+    padding-top: 10px;
+    background: linear-gradient(45deg, #fdcf00, #e52e3d);
+    -webkit-background-clip: text;
+    color: transparent;
+    font-size: 20px; /* Tamanho da fonte, ajuste conforme necessário */
+    font-weight: bold; /* Pode ajustar conforme necessário */
+    text-align: center; /* Pode ajustar conforme necessário */
+    margin: 0;
+}
+
+
+.btnAcao {
+    border-radius: 50%; /* Ajuste para tornar o botão circular */
+    height: 45px;
+    width: 45px;
+    background-color: #ff7b00;
+    
+    color: #dee2e6;
+    border: none; /* Remova a borda para melhorar a aparência */
+    cursor: pointer;
+    transition: background-color 0.3s; /* Adicione uma transição para suavizar a mudança de cor */
+}
+
+.btnAcao:hover {
+    background: linear-gradient(45deg, #fdcf00, #e52e3d);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+#listaTarefas {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap; /* Permite que os itens quebrem para a próxima linha */
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 42px;
+    width: 60%;
+    margin-left: 20%;
+}
+
+#listaTarefas li {
+    display: flex;
+    flex-direction: row; /* Ajuste para empilhar elementos verticalmente */
+    justify-content: space-between;
+    align-content: center;
+    align-items: flex-end;
+    padding: 15px;
+    width: 75%; /* Ajuste para ocupar 75% da largura */
+    background: linear-gradient(45deg, #fdcf00, #e52e3d);
+    -webkit-background-clip: text;
+    color: transparent;
+    font-size: 20px;
+    margin: 10px; /* Adicione uma margem entre os itens */
+}
+
+.textoTarefa {
+    display: flex;
+    align-content: space-between;
+}
+
+
+

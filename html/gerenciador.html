@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <!-- Meta tags Obrigatórias -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <!-- CSS Personalizado -->
+    <link rel="stylesheet" href="/css/gerenciador.css">
+    <link rel="stylesheet" href="/css/global.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <script src="/js/gerenciador.js"></script>
+
+    <title>Página Inicial</title>
+</head>
+
+<body>
+    <!-- Abas nav -->
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item">
+            <a class="nav-link" id="profile-tab" data-toggle="tab" href="#perfil" role="tab" aria-controls="profile"
+                aria-selected="false">Perfil</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="closed-tab" data-toggle="tab" href="#closed" role="tab" aria-controls="closed"
+                aria-selected="false">Sair</a>
+        </li>
+    </ul>
+
+    <div class="form">
+        <h2>Crie sua Tarefa</h2>
+        <form id="tarefaForm" class="form-column">
+            <div class="form-group row">
+                <label for="inputTarefa" class="col-sm col-form-label">Tarefa</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="inputTarefa" placeholder="Tarefa">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="inputDataInicio" class="col-sm col-form-label">Data início</label>
+                <div class="col-sm-10">
+                    <input type="date" class="form-control" id="inputDataInicio" placeholder="Data início">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="inputDataTermino" class="col-sm col-form-label">Data Término</label>
+                <div class="col-sm-10">
+                    <input type="date" class="form-control" id="inputDataTermino" placeholder="Data término">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="inputHoraInicio" class="col-sm col-form-label">Hora início</label>
+                <div class="col-sm-10">
+                    <input type="time" class="form-control" id="inputHoraInicio" placeholder="Hora início">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="inputHoraTermino" class="col-sm col-form-label">Hora término</label>
+                <div class="col-sm-10">
+                    <input type="time" class="form-control" id="inputHoraTermino" placeholder="Hora término">
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="validationTextarea">Descrição</label>
+                <textarea class="form-control invalid" id="validationTextarea" placeholder="Digite a descrição..."
+                    required></textarea>
+            </div>
+            <div class="btn-group row">
+                <div class="col-sm-10">
+                    <button type="button" class="btn btn-primary" id="btn-tarefa" onclick="criarTarefa()">Criar
+                        Tarefa</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <div class="container-tarefas">
+        <div class="status-tarefa">
+            <h5>
+                <p>Tarefa</p>
+            </h5>
+            <h5>
+                <p>Início</p>
+            </h5>
+            <h5>
+                <p>Término</p>
+            </h5>
+            <h5>
+                <p>Status</p>
+            </h5>
+            <h5>
+                <p>Alterar</p>
+            </h5>
+        </div>
+        <ul id="listaTarefas">
+            <!--<li>
+                <span class="textoTarefa">Tarefa 1</span>
+                <div>
+                    <button class="btnAcao edit-btn" data-toggle="modal" data-target="#editModal"><i
+                            class="fa fa-pencil"></i></button>
+                    <button class="btnAcao delete-btn" data-toggle="modal" data-target="#deleteModal"><i
+                            class="fa fa-trash"></i></button>
+                </div>
+            </li>-->
+        </ul>
+    </div>
+
+    <!-- Modal de Edição -->
+    <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="editModalLabel">Editar Tarefa</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <label for="editInputTarefa">Nova Tarefa</label>
+                    <input type="text" class="form-control" id="editInputTarefa" placeholder="Nova Tarefa">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                    <button type="button" class="btn btn-primary">Salvar Alterações</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Exclusão -->
+    <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="deleteModalLabel">Confirmar Exclusão</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Tem certeza de que deseja excluir esta tarefa?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-danger">Excluir</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
